@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="JDABotsManager:jar">
+    <output-path>$PROJECT_DIR$/../../Omer/שולחן עבודה/BG-Software/Bot</output-path>
+    <root id="archive" name="JDABotsManager.jar">
+      <element id="module-output" name="JDABotsManager" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../Discord Jars/gson-2.8.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../Discord Jars/guava-29.0-jre.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../Discord Jars/JDA-4.2.0_168-withDependencies-min.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../Discord Jars/sqlite-jdbc-3.27.2.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
