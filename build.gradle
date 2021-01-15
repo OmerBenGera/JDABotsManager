@@ -23,7 +23,15 @@ dependencies {
     implementation("org.yaml:snakeyaml:1.27")
 }
 
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.ome_r.jdabotsmanager.JDABotsManager'
+    }
+}
+
 shadowJar {
+    dependsOn jar
+
     archiveFileName = rootProject.name + ".jar"
 
     delete fileTree('./target/') {
