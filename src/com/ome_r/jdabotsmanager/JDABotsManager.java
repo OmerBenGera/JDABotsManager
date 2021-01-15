@@ -55,12 +55,16 @@ public final class JDABotsManager {
             if(!dataFolder.exists())
                 dataFolder.mkdirs();
 
-            discordBot.init(botName, dataFolder);
+            discordBot.init(botName, dataFolder, botClassLoader);
 
             logger.info("Enabling " + botName);
 
             discordBot.start();
         }
+    }
+
+    public static Logger getLogger(){
+        return logger;
     }
 
 }

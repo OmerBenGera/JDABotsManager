@@ -14,6 +14,7 @@ public abstract class DiscordBot {
 
     protected String name;
     protected File dataFolder;
+    protected ClassLoader classLoader;
 
     protected DiscordBot(String token) throws LoginException, InterruptedException {
         this.jda = JDABuilder.create(token, EnumSet.allOf(GatewayIntent.class)).build().awaitReady();
@@ -27,13 +28,22 @@ public abstract class DiscordBot {
         return name;
     }
 
-    public void init(String name, File dataFolder){
+    public void init(String name, File dataFolder, ClassLoader classLoader){
         this.name = name;
         this.dataFolder = dataFolder;
+        this.classLoader = classLoader;
     }
 
     public File getDataFolder(){
         return dataFolder;
+    }
+
+    public ClassLoader getClassLoader() {
+        return classLoader;
+    }
+
+    public void saveResource(String resource){
+        FileUtils.saveResource(this, resource);
     }
 
     public abstract void start();
