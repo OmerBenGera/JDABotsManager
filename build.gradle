@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'maven'
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+}
+
+group "JDABotsManager"
+version = "1.0.0"
+
+repositories {
+    jcenter()
+    maven { url 'https://repo.bg-software.com/repository/public-libs/' }
+}
+
+dependencies {
+    implementation 'net.dv8tion:JDA:4.2.0_227'
+
+    implementation 'com.zaxxer:HikariCP:latest'
+    implementation 'org.slf4j:SLF4J:latest'
+    implementation("com.google.guava:guava:30.1-jre")
+
+}
+
+shadowJar {
+    archiveFileName = rootProject.name + ".jar"
+
+    delete fileTree('./target/') {
+        exclude archiveName
+    }
+
+    destinationDirectory = file("./target/")
+    from sourceSets.getByName("main").output
+    configurations = [project.configurations.getByName("runtimeClasspath")]
+}
+
+build {
+    dependsOn shadowJar
+}
