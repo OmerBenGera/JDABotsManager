@@ -13,12 +13,14 @@ repositories {
 }
 
 dependencies {
+    // JDA
     implementation 'net.dv8tion:JDA:4.2.0_227'
 
+    // Libs
     implementation 'com.zaxxer:HikariCP:latest'
     implementation 'org.slf4j:SLF4J:latest'
     implementation("com.google.guava:guava:30.1-jre")
-
+    implementation("org.yaml:snakeyaml:1.27")
 }
 
 shadowJar {
