@@ -18,7 +18,7 @@ repositories {
 
 dependencies {
     // JDA
-    implementation 'net.dv8tion:JDA:4.3.0_324'
+    implementation 'net.dv8tion:JDA:5.0.0-alpha.20'
 
     // Libs
     implementation 'com.zaxxer:HikariCP:5.0.1'
